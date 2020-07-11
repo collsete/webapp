@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+<br>  <p class="text-center">Tu carrito! <a href="http://bootstrap-ecommerce.com/" target="_blank"> </a></p>
+<hr>
+
+
+
+<div class="card">
+	<table class="table table-hover shopping-cart-wrap" >
+		<thead class="text-muted">
+			<tr>
+  			<th scope="col">Producto</th>
+  			<th scope="col" width="120"></th>
+  			<th scope="col" width="200">Precio por unidad</th>
+  			<th scope="col" width="200" >Total compra : ${{total}}</th>
+			</tr>
+			</thead>
+			
+			<tbody *ngFor="let libro of carritoLibros"> <!--aqui va la sentencia de la base que pides osea carrito-->
+				<tr>
+				<td>
+				<figure class="media">
+				<div class="img-wrap"><img src="http://localhost/webapp-backend/imagenes/{{libro.imagen}}" class="img-thumbnail img-sm"></div>
+				<figcaption class="media-body">
+				<h6 class="title text-truncate" style="font-size: 25px;"> {{libro.nombre}} </h6>
+				</figcaption>
+				</figure> 
+				</td>
+				<td>
+			</td>
+			<td> 
+			<div class="price-wrap"> 
+				<var class="price">${{libro.precio}}</var> 
+			</div> <!-- price-wrap .// -->
+			</td>
+			<td class="text-right"> 
+			<a (click)="reducirCarrito(libro.id);" href="http://localhost:4200/Carrito" class="btn btn-outline-danger"> × Remover</a>
+			</td>
+			</tr>
+		</tbody>
+		<br>
+		<br>
+		<button class="btn btn-success" type="button" [routerLink]="['/Checkout']">Comprar</button>
+	</table>
+</div> <!-- card.// -->

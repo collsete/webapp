@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div class="row text-center margin-b-40">
+    <div class="col-sm-12 col-sm-offset-12">
+        <h2>Los productos más vendidos</h2>
+        <p>Aqui tienes Nuestro top 3 de libros más vendidos</p>
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <img src="http://localhost/webapp-backend/imagenes/{{libros[0].imagen}}"  id="picture-size">
+                <div>
+                  <a [routerLink]= "['/Libro',libros[0].id]" class="btn">View</a>
+                </div>
+              </div>
+              <br>
+              <h2><a href="shop-item.html">{{libros[0].nombre}}</a></h2>
+              <div class="pi-price">${{libros[0].precio}}</div>
+              <div class="sticker sticker-new"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <img src="http://localhost/webapp-backend/imagenes/{{libros[1].imagen}}" class="img-responsive"  id="picture-size">
+                <div>
+                  <a [routerLink]= "['/Libro',libros[1].id]" class="btn">View</a>
+                </div>
+              </div>
+              <br>
+              <h2><a href="shop-item.html">{{libros[1].nombre}}</a></h2>
+              <div class="pi-price">${{libros[1].precio}}</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <img src="http://localhost/webapp-backend/imagenes/{{libros[2].imagen}}" class="img-responsive" id="picture-size">
+                <div>
+                  <a [routerLink]= "['/Libro',libros[2].id]" class="btn">View</a>
+                </div>
+              </div>
+              <br>
+              <h2><a href="shop-item.html">{{libros[2].nombre}}</a></h2>
+            
+              <div class="pi-price">${{libros[2].precio}}</div>
+            </div>
+        </div>
+    </div>
+</div>

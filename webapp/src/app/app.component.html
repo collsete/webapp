@@ -1,0 +1,61 @@
+<nav class="mb-4 navbar navbar-expand-lg navbar-dark red darken-2">
+  <a class="navbar-brand font-bold" href="#">Venta de Libritos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText1" aria-controls="navbarText1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText1">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" [routerLink]="['Inicio']">Inicio <i class="fa fa-home" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" [routerLink]="['Categorias']">Categorias <i class="fa fa-book" aria-hidden="true"></i> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" [routerLink]="['Contacto']">¡Contactanos! <i class="fa fa-phone" aria-hidden="true"></i> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-effect waves-light" [routerLink]="['Busqueda']">Buscar libros <i class="fa fa-search" aria-hidden="true"></i> </a>
+        </li>
+          <li class="nav-item">
+              <button type="button" class="btn btn-default btn-sm" [routerLink]="['Carrito']">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <span  class="glyphicon glyphicon-shopping-cart"></span> Carrito de compras
+            </button>
+          </li>
+      </ul>
+
+  </div>
+</nav>
+<!------fin nav bar---------->
+<body class="col-lg-12">
+ <router-outlet base href="/"></router-outlet>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--footer -->
+<footer class="col-lg-12"> 
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+          <p> Somos una pequeña tienda chilena de libros que considera que por la contigencia nacional necesitabamos una pagina web. </p>
+          <p class="h6">© Todos los derechos reservados</p>
+        </div>
+        <hr>
+      </div>	
+    </div>
+  </section>
+</footer>
+  <!-- ./Footer -->

@@ -1,0 +1,47 @@
+<div class="container my-container ">
+    <div class="card bg-white px-5">
+        <div class="card-header">
+            <div class="jumbotron mb-1 bg-white ">
+                <h1 class="display-5"><b>Para finalizar rellene este formulario</b></h1>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row ">
+                <!-- Left Half -->
+                <div class="col-md-5 ">
+                    <div class="card mt-2 border-0 second-card">
+                        <!-- Form -->
+                        <div class="card-body">
+                            <h5 class="card-title">Detalles de compra</h5>
+                            <div class="row">
+                                <div class="col-md-auto col-sm-auto ">
+                                    <div class="custom-control custom-radio custom-control-inline "> <input id="customRadioInline11" type="radio" name="customRadioInline11" class="custom-control-input" checked="true"> <label for="customRadioInline11" class="custom-control-label label-radio"><img src="https://img.icons8.com/color/48/000000/visa.png" class="card-image"> </label> </div>
+                                </div>
+                                <div class="col-md-auto col-sm">
+                                    <div class="custom-control custom-radio custom-control-inline "> <input id="customRadioInline22" type="radio" name="customRadioInline11" class="custom-control-input"> <label for="customRadioInline22" class="custom-control-label label-radio"><img src="https://img.icons8.com/officel/48/000000/discover.png" class="card-image"></label> </div>
+                                </div>
+                            </div> <!-- Payment Form -->
+                            <form method="get" action="">
+                                <div class="form-group "> <label for="cc-number" class="control-label mt-3">Numero de tarjeta</label> <input id="cc-number" name="cc-number" type="tel" placeholder="xxxx-xxxx-xxxx-xxxx" class="form-control form-control-lg cc-number identified visa " value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number" autocomplete="cc-number"> </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6 col-sm-6"> <label for="cc-exp" class="control-label ">Fecha de expiracion</label> <input id="cc-exp" type="tel" class=" form-control form-control-lg cc-exp" autocomplete="cc-exp" placeholder="MM / YY" required> </div>
+                                    <div class="form-group col-md-6 col-sm-6"> <label for="cc-cvc" class="control-label ">CVV<span><i class="fa fa-info-circle px-2" aria-hidden="true"></i> </span> </label> <input id="cc-cvc" type="tel" class="form-control-lg form-control cc-cvc " autocomplete="off" placeholder="•••" required> </div>
+                                    <div class="form-group col-md-4 col-sm-6"> <label for="inputZip">Zip</label> <input type="text" class="form-control form-control-lg" id="inputZip" placeholder="111111"> </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 d-none d-sm-block"></div> <!-- Right Half -->
+                <div class="col-md-6">
+                    <div class="card right-card ">
+                        <div class="card-header ">
+                            <h3 class="font-weight"><b>Estas apunto de terminar</b></h3>
+                        </div>
+                        <div class="card-footer"> <button type="submit" (click)="vaciarCarrito();" class="btn btn-primary btn-lg">Comprar ya!</button> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

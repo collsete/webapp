@@ -1,0 +1,169 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card mb-10">
+          <div class="card-header">
+            </div>
+            <div class="card-body store-body">
+                <div class="product-info">
+                    <div class="product-gallery">
+                        <div class="product-gallery-featured">
+                        <img src="http://localhost/webapp-backend/imagenes/{{libro.imagen}}" id="picturehere">
+                        </div>
+                    </div>
+                     <div class="product-description mb-3">
+                        <br>
+                    <h2 class="mb-5" style="font-size: 20px; margin-left: 15px; font-family: Times New Roman;"> Descripcion: {{libro.description}}</h2>
+                    <p>
+                        <!--Descripcion-->
+                    </p>
+                    </div>
+                    <!--Aqui estan los recomendados-->
+                <div class="product-seller-recommended">
+                    <h3 class="mb-5">Recomendados</h3>
+                    <div class="recommended-items card-deck">
+                    <div class="card">
+                        <img src="http://localhost/webapp-backend/imagenes/{{libros[0].imagen}}" id="favoritossize" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">${{libros[0].precio}}</h5>
+                        <a  [routerLink]="['/Libro',libros[0].id]" class="text-muted"><small>{{libros[0].nombre}}</small></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="http://localhost/webapp-backend/imagenes/{{libros[1].imagen}}" id="favoritossize" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">${{libros[1].precio}}</h5>
+                        <a [routerLink]="['/Libro',libros[1].id]" class="text-muted"><small>{{libros[1].nombre}}</small></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="http://localhost/webapp-backend/imagenes/{{libros[2].imagen}}" id="favoritossize" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">${{libros[2].precio}}</h5>
+                        <a [routerLink]="['/Libro',libros[2].id]" class="text-muted"><small>{{libros[2].nombre}}</small></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="http://localhost/webapp-backend/imagenes/{{libros[3].imagen}}" id="favoritossize" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">${{libros[3].precio}}</h5>
+                        <a [routerLink]="['/Libro',libros[3].id]" class="text-muted"><small>{{libros[3].nombre}}</small></a>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Fin recommendados -->
+                    <br>
+                    <div class="product-faq mb-5">
+                    <h2 class="mb-3">Comentarios</h2>
+                    </div>
+                    <div class="product-comments">
+
+
+                    <form #formComentario = "ngForm" (ngSubmit)="cargarComentario()" class = "col-lg-6">
+                    <label> Nombre
+                    </label>
+                        <input type="text" #nombreUs ="ngModel" name="nombreUs"  [(ngModel)]="comment.nombreUs" class="form-control">
+
+                    <label> Califique de 1 a 10 el libro
+                     </label>
+                        <input type="text" #calificacion ="ngModel" name="calificacion" 
+                        [(ngModel)]="comment.calificacion" class="form-control" required pattern="[1-10]">
+
+                    <label> Comentario
+                    </label>
+                    <textarea type="text" #texto ="ngModel" name="texto" 
+                        [(ngModel)]="comment.texto" class="form-control" id="comment" required> </textarea>
+
+                        <input type ="submit" value ="Enviar" onClick="window.location.reload();" class = "btn btn-primary">
+
+                </form>
+                <br>
+                    <h5 class="mb-5">Ultimos comentarios</h5>
+                    <br>
+
+              <div   *ngFor="let comentario of comentarios">
+                    <ol class="list-unstyled last-questions-list">
+                        <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name">{{comentario.nombreUs}}    |    {{comentario.fecha}}  | </span>
+                    <span style="font-style: oblique;">Calificacion : {{comentario.calificacion}} / 10 </span></div>
+                    <div class="mt-2">
+                    <p class="comment-text"> {{comentario.texto}}</p>
+                            <hr>
+                    </div>
+                    </ol>
+                     </div>
+                    </div>
+                </div>
+                </div>
+
+                <!--aqui es lo que esta alado de la foto-->
+                <div class="product-payment-details">
+                <h4 class="product-title mb-2" style="font-size: 40px;" >{{libro.nombre}}</h4>
+                <br>
+                <h4 class="product-price display-4" style="font-size: 30px;margin-left: 30px;"> Precio : ${{libro.precio}}</h4>
+                <br>
+                <h4 style="30px;margin-left: 30px;"> Autor:  {{libro.autor}} </h4>
+                <br>
+                <h4 style="30px;margin-left: 30px;"> Editorial:  {{libro.editorial}} </h4>
+                <br>
+                <h4 style="30px;margin-left: 30px;"> Categoria:     {{libro.categoria}} </h4>
+                <br>
+                <h4 style="30px;margin-left: 30px;"> Valoracion:    {{libro.rating}} /  10</h4>
+                <br>
+
+                <button class="btn btn-primary btn-lg" (click)="aumentarCarrito(libro.id);">Añadir al carrito</button>
+                
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+<!--
+    <body>
+         
+        <div class="container-fluid">
+            <div class="row">   
+
+                <div id="barraImagen" class="col-md-5 p-0 text-center"> 
+                    <div class="p-2">   
+                        <img id="picture-size" src="http://localhost/webapp-backend/imagenes/{{libro.imagen}}" loading="lazy"  class="img-fluid mx-auto d-block">
+                    </div>
+                    <p class="lead"> Valor : ${{libro.precio}} </p>
+                    <p class="lead"> Editorial : {{libro.editorial}} </p>
+                    <p class="lead"> Stock : {{libro.stock}} </p>
+                    <p class="lead"> Categoria : {{libro.categoria}} </p>
+                    <p class="lead"> Valoracion : {{libro.rating}} </p>
+                    <p class="lead"> Valor : {{libro.precio}} </p>
+                    <p class="lead"> Autor : {{libro.autor}} </p>
+                </div>
+
+
+            
+                <div id="barraPerfil" class="col-md-6">
+                    <div class="p-2">   
+                        <h1 class="text-center h3 pt-2 font-weight-bold"> {{libro.nombre}} </h1> 
+
+                        <p class="lead text-left">
+                            <b class="h3" style="font-family: Times New Roman"> {{libro.description}}
+                            </b>
+                            <br>
+
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+-->
+
+

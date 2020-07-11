@@ -1,0 +1,26 @@
+<div class="container d-flex justify-content-center mt-50 mb-50">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body" *ngFor="let libro of libros">
+                <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
+                    <div class="mr-2 mb-3 mb-lg-0"> <img src="http://localhost/webapp-backend/imagenes/{{libro.imagen}}" id="imagen"> </div>
+                    <div class="media-body">
+                        <h6 class="media-title font-weight-semibold"> <a  style="font-size: 20px; margin-left: 20px;"[routerLink]= "['/Libro/',libro.id]" data-abc="true"> {{libro.nombre}} </a> </h6>
+                        <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
+                            <li class="list-inline-item"><p style="font-size: 15px; margin-left: 25px; font-weight: bold;" data-abc="true"> Categoria : {{libro.categoria}}</p></li>
+                            <br>
+                            <li class="list-inline-item"><p style="font-size: 15px; margin-left: 25px; font-weight: bold;"  data-abc="true"> Editorial : {{libro.editorial}}</p></li>
+                        </ul>
+                        <p class="mb-3" id="texto">{{libro.description}} </p>
+                        <ul class="list-inline list-inline-dotted mb-0">
+                            <li style="margin-left: 20px; font-weight: bold;">Escrito por : {{libro.autor}}</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3 mt-lg-0 ml-lg-3 text-center">
+                        <h3 style="font-size: 50px;">${{libro.precio}}</h3>
+                        <div style="font-weight: bold;" >Valoracion: {{libro.rating}} / 10 </div> <button class="btn btn-warning mt-4 text-white" (click)="aumentarCarrito(libro.id);"><i class="icon-cart-add mr-2"></i> Añadir a carrito</button>
+                    </div>
+              </div>
+            </div>
+     </div>
+</div>

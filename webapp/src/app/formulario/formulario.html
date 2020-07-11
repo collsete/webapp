@@ -1,0 +1,42 @@
+<h1> Aca va el formulario <h1>
+
+<!--
+
+<hr/>
+
+<form #formLibro = "ngForm" (ngSubmit)="onSubmit()" class = "col-lg-6">
+	<label> Id 
+	 <span *ngIf="!id.valid && id.touched" class="label label-danger" > Por favor, ingrese el id! </span> 
+	</label>
+		<input type="text" #id ="ngModel" name="id" 
+		[(ngModel)]="libro.id" class="form-control" required pattern="[0-9]+">
+
+	<label> Nombre
+		<span *ngIf="!nombre.valid && nombre.touched" class="label label-danger" > Por favor, ingrese el nombre </span>
+	 </label>
+		<input type="text" #nombre ="ngModel" name="nombre" 
+		[(ngModel)]="libro.nombre" class="form-control" required>
+
+	<label> Description 
+		<span *ngIf="!description.valid && description.touched" class="label label-danger" > Por favor, ingrese una descripcion </span>
+	</label>
+		<textarea #description ="ngModel" name="description" 
+		[(ngModel)]="libro.description" class ="form-control">	
+		</textarea>
+
+	<label> Precio
+		<span *ngIf="!precio.valid && precio.touched" class="label label-danger" > Por favor, ingrese el precio </span>
+	 </label>
+		<input type="text" #precio ="ngModel" name="precio" 
+		[(ngModel)]="libro.precio" class="form-control" required pattern="[0-9]+" >
+
+	<label> Imagen </label>
+		<input type="file" class="form-control" (change) = "fileChangeEvent($event)"> 
+
+<br/>
+		<input type ="submit" value ="{{titulo}}" [disabled]="!formLibro.form.valid" class = "btn btn-success">
+
+</form>
+
+<hr/>
+-->
